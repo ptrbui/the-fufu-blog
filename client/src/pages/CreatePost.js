@@ -1,6 +1,7 @@
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css' ;
 import {useState} from "react";
+import {Navigate} from "react-router-dom";
 
 const modules = {
     toolbar: [
@@ -23,6 +24,7 @@ export default function CreatePost() {
     const [summary, setSummary] = useState('');
     const [content, setContent] = useState('');
     const [files, setFiles] = useState('');
+    const [redirect, setRedirect] = useState(false);
     async function createNewPost(ev) {
         const data = new FormData();
         data.set('title', title);
@@ -35,7 +37,14 @@ export default function CreatePost() {
             method: 'POST',
             body: data,
         });
-        console.log(await response.json());
+
+        if (response.ok) {
+            setRedirect(true);
+        }
+    }
+
+    if (redirect) {
+        return <Navigate to={'/'}/>
     }
     return (
         <form onSubmit={createNewPost}>
