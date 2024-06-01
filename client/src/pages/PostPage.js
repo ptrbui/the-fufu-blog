@@ -12,7 +12,13 @@ export default function PostPage() {
                 });
             });
     }, []);
+
+    if (!postInfo) return '';
+
     return (
-        <div>post page here</div>
+        <div>
+
+            <img src={`http://localhost:4000/${postInfo.cover}`} alt=""/>
+        </div>
     );
 }
