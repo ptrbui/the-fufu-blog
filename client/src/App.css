@@ -106,6 +106,7 @@ div.post-page div.image {
 div.post-page div.image img{
     object-fit: cover;
     object-position: center center;
+    width: 100%
 }
 
 div.post-page a{
@@ -129,4 +130,8 @@ div.post-page div.author{
     margin-bottom: 20px;
     font-size: 0.7rem;
     font-weight: bold;
+}
+
+div.post-page div.content p{
+    line-height: 1.6rem;
 }
