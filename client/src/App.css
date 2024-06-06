@@ -4,6 +4,9 @@
 body {
     color: #222;
 }
+a{
+    cursor: pointer;
+}
 img {
     max-width: 100%;
 }
@@ -85,6 +88,7 @@ input {
     background-color: #fff;
 }
 button {
+    cursor: pointer;
     width: 100%;
     display: block;
     background-color: #555;
