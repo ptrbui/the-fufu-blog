@@ -22,34 +22,50 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 mongoose.connect('mongodb+srv://pbui2021:P36qut6r7lZplFEU@cluster0.ve2m99d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 app.post('/register', async (req,res) => {
-    const{username, password} = req.body;
+    const{username, password, accessKey} = req.body;
+    const validAccessKey = 'draymond-green';
+
     try {
+        // Check if the username already exists
+        const existingUser = await User.findOne({ username });
+        if (existingUser) {
+            return res.status(400).json({ message: 'username already exists.' });
+        }
+
+        if (accessKey !== validAccessKey) {
+            return res.status(400).json({ message: 'invalid access key.' });
+        }
+
         const userDoc = await User.create({
             username,
             password: bcrypt.hashSync(password, salt),
         });
         res.json(userDoc);
-    } catch(e) {
-        res.status(400).json(e);
+    } catch (e) {
+        res.status(400).json({ message: 'an error occurred.' });
     }
 });
 
 app.post('/login', async (req, res) => {
     const {username, password} = req.body;
     const userDoc = await User.findOne({username});
+
+    if (!userDoc) {
+        return res.status(400).json('user does not exist.');
+    }
+
     const passOk = bcrypt.compareSync(password, userDoc.password);
     if (passOk) {
         // logged in
-        jwt.sign({username, id:userDoc._id}, secret, {}, (err, token) => {
+        jwt.sign({username, id: userDoc._id}, secret, {}, (err, token) => {
             if (err) throw err;
             res.cookie('token', token).json({
                 id: userDoc._id,
                 username,
             });
         });
-        // res.json();
     } else {
-        res.status(400).json('wrong credentials');
+        res.status(400).json('password does not match.');
     }
 });
 

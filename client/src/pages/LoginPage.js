@@ -1,12 +1,17 @@
 import {useContext, useState} from "react";
-import {Navigate} from "react-router-dom";
+import {Navigate, useLocation} from "react-router-dom";
 import {UserContext} from "../UserContext";
 
 export default function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const {setUserInfo} = useContext(UserContext);
+
+    const location = useLocation();
+    const successMessage = location.state?.successMessage;
+
     async function login(ev) {
         ev.preventDefault();
         const response = await fetch('http://localhost:4000/login', {
@@ -21,7 +26,8 @@ export default function LoginPage() {
                 setRedirect(true);
             });
         } else {
-            alert('wrong credentials');
+            const errorData = await response.json();
+            setErrorMessage(errorData);
         }
     }
 
@@ -43,6 +49,8 @@ export default function LoginPage() {
                 value={password}
                 onChange={ev => setPassword(ev.target.value)}
             />
+            {successMessage && <p class="successMessage">{successMessage}</p>}
+            {errorMessage && <p className="errorMessage">{errorMessage}</p>}
             <button>Login</button>
         </form>
     );
