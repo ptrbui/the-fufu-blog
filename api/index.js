@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require("mongoose");
@@ -12,14 +13,14 @@ const uploadMiddleware = multer({dest: 'uploads/'});
 const fs = require('fs');
 
 const salt = bcrypt.genSaltSync(10);
-const secret = 'askihcboecbu973289gd3908dg2';
+const secret = process.env.SECRET_KEY;
 
 app.use(cors({credentials:true, origin:'http://localhost:3000'}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect('mongodb+srv://pbui2021:P36qut6r7lZplFEU@cluster0.ve2m99d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect(process.env.MONGODB_URL);
 
 app.post('/register', async (req,res) => {
     const{username, password, accessKey} = req.body;
