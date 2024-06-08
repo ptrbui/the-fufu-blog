@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, Navigate, useNavigate} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {UserContext} from "./UserContext";
 import blogIcon from './media/fufu-icon.png';
@@ -9,6 +9,8 @@ import square from './media/square.png';
 
 export default function Header() {
     const {setUserInfo, userInfo} = useContext(UserContext);
+    const navigate = useNavigate();
+
     useEffect(() => {
         fetch('http://localhost:4000/profile', {
             credentials: 'include',
@@ -23,8 +25,10 @@ export default function Header() {
         fetch('http://localhost:4000/logout', {
             credentials: 'include',
             method: 'POST',
+        }).then(() => {
+            setUserInfo(null);
+            navigate('/'); // Redirect to the home page after logout
         });
-        setUserInfo(null);
     }
 
     const username = userInfo?.username;

@@ -49,7 +49,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={ev => setPassword(ev.target.value)}
             />
-            {successMessage && <p class="successMessage">{successMessage}</p>}
+            {successMessage && <p className="successMessage">{successMessage}</p>}
             {errorMessage && <p className="errorMessage">{errorMessage}</p>}
             <button>Login</button>
         </form>

@@ -78,6 +78,7 @@ form.login, form.register {
     max-width: 400px;
     margin: 0 auto;
 }
+
 input {
     display: block;
     margin-bottom: 5px;
@@ -100,6 +101,14 @@ button {
 }
 form.login h1, form.register h1 {
     text-align: center;
+}
+
+form.login {
+    margin-top: 12rem;
+}
+
+form.register {
+    margin-top: 8rem;
 }
 
 div.post-page div.image {
@@ -243,4 +252,21 @@ header nav a:hover {
 
 .about-container h2{
     text-align: center;
+}
+
+.about-container {
+    padding-top: 3rem;
+}
+
+.access-key-text {
+    margin-right: 5px;
+}
+
+.size-6 { /*key icon*/
+    vertical-align: -2px;
+}
+
+.in-text {
+    color: deeppink;
+    text-decoration: none;
 }
