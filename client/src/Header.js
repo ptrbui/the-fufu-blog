@@ -1,6 +1,11 @@
 import {Link} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {UserContext} from "./UserContext";
+import blogIcon from './media/fufu-icon.png';
+import circle from './media/circle.png';
+import triangle from './media/triangle.png';
+import square from './media/square.png';
+
 
 export default function Header() {
     const {setUserInfo, userInfo} = useContext(UserContext);
@@ -26,7 +31,18 @@ export default function Header() {
 
     return (
         <header>
-            <Link to="/" className="logo">The Fufu Blog</Link>
+            <Link to="/" className="logo">
+                <div className="fufu-name">
+                    The Fufu Blog
+                    <div className="built-by">built by Peter Bui</div>
+                </div>
+                <div className="logo-container">
+                    {/* <img className="icon circle" src={circle}/> */}
+                    {/* <img className="icon triangle" src={triangle}/> */}
+                    {/* <img className="icon square" src={square}/> */}
+                </div>
+
+            </Link>
             <nav>
                 {username && (
                     <>

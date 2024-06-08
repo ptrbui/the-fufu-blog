@@ -205,3 +205,42 @@ header nav a:hover {
 .post .image:hover + .texts h2 {
     color: deeppink;
 }
+
+.circle {
+    width: 17px; /* Adjust size */
+    height: 17px; /* Adjust size */
+    margin-left: 10px;
+    vertical-align: -1px;
+}
+
+.triangle {
+    width: 16px; /* Adjust size */
+    height: 16px; /* Adjust size */
+    margin-left: 4px;
+    vertical-align: 0px;
+}
+
+.square {
+    width: 15px; /* Adjust size */
+    height: 15px; /* Adjust size */
+    margin-left: 6px;
+    vertical-align: 0px;
+}
+
+.fufu-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.built-by {
+    margin-left: 2px;
+    padding-top: 3px;
+    font-size: x-small;
+    font-weight: normal;
+    color: #888888;
+}
+
+.about-container h2{
+    text-align: center;
+}
