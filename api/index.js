@@ -154,7 +154,3 @@ app.get('/post/:id', async (req, res) => {
 })
 
 app.listen(4000);
-
-// Cluster0
-// username: pbui2021
-// password: P36qut6r7lZplFEU
