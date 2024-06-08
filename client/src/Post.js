@@ -11,7 +11,7 @@ export default function Post({_id, title, summary, cover, content, createdAt, au
             </div>
             <div className="texts">
                 <Link to={`/post/${_id}`}>
-                <h2>{title}</h2>
+                <h2 className="indexPostTitle">{title}</h2>
                 </Link>
                 <p className="info">
                     <a href="" className="author">{author.username}</a>

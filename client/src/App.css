@@ -177,3 +177,31 @@ a svg {
     margin-bottom: 7px;
     text-align: center;
 }
+
+.regPage .regPageLink {
+    color: deeppink;
+    text-decoration: none;
+}
+
+/* Styles for the navigation links */
+header nav a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Hover effect for navigation links */
+header nav a:hover {
+    color: deeppink;
+}
+
+.indexPostTitle h2:hover {
+    color: deeppink;
+}
+
+.post .texts a:hover h2 {
+    color: deeppink;
+}
+
+.post .image:hover + .texts h2 {
+    color: deeppink;
+}

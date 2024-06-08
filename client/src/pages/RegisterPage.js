@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 
 export default function RegisterPage() {
     const [username, setUsername] = useState('');
@@ -40,14 +40,14 @@ export default function RegisterPage() {
     return (
         <form className="register" onSubmit={register}>
             <h1>Register</h1>
-            <p className="regPage">Create a username:</p>
+            <p className="regPage">create a username:</p>
             <input
                 type="text"
                 placeholder="username"
                 value={username}
                 onChange={ev => setUsername(ev.target.value)}
             />
-            <p className="regPage">Create a password:</p>
+            <p className="regPage">create a password:</p>
             <input
                 type="password"
                 placeholder="password"
@@ -60,7 +60,9 @@ export default function RegisterPage() {
                 value={retypePassword}
                 onChange={ev => setRetypePassword(ev.target.value)}
             />
-            <p className="regPage">Access key:</p>
+            <p className="regPage">
+                <Link to="/About" className="regPageLink">access key</Link>
+            </p>
             <input
                 type="text"
                 placeholder="access-key" // New input for access-key
