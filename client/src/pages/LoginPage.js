@@ -53,5 +53,5 @@ export default function LoginPage() {
             {errorMessage && <p className="errorMessage">{errorMessage}</p>}
             <button>Login</button>
         </form>
-    );
+    )
 }

@@ -37,7 +37,7 @@ export default function Header() {
         <header>
             <Link to="/" className="logo">
                 <div className="fufu-name">
-                    The Fufu Blog
+                    The Fufu
                     <div className="built-by">built by Peter Bui</div>
                 </div>
                 <div className="logo-container">

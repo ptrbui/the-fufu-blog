@@ -15,9 +15,10 @@ main {
     max-width: 960px;
     margin: 0 auto;
 }
+
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between !important;
     margin-top: 20px;
     margin-bottom: 50px;
     align-items: center;
@@ -75,7 +76,7 @@ div.post p.summary {
 }
 
 form.login, form.register {
-    max-width: 400px;
+    max-width: 300px;
     margin: 0 auto;
 }
 
@@ -99,16 +100,17 @@ button {
     padding: 8px 0px;
     margin-top: 10px;
 }
+
 form.login h1, form.register h1 {
     text-align: center;
 }
 
 form.login {
-    margin-top: 12rem;
+    margin-top: 10rem;
 }
 
 form.register {
-    margin-top: 8rem;
+    margin-top: 6rem;
 }
 
 div.post-page div.image {
@@ -255,7 +257,10 @@ header nav a:hover {
 }
 
 .about-container {
-    padding-top: 3rem;
+    width: auto;
+    max-width: 450px;
+    margin: auto;
+    padding-top: 1rem;
 }
 
 .access-key-text {

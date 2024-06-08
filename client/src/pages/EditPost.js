@@ -47,6 +47,8 @@ export default function EditPost() {
 
     return (
         <form onSubmit={updatePost}>
+            <h2>Edit Post</h2>
+
             <input type="title"
                    placeholder={'Title'}
                    value={title}
