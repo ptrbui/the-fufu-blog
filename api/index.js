@@ -17,7 +17,7 @@ const secret = process.env.SECRET_KEY;
 
 app.use(cors({
     credentials: true,
-    origin: ['http://localhost:3000', 'https://fufu-blog.netlify.app/'] /*update with new url*/
+    origin: ['http://localhost:3000', 'https://fufu-blog.netlify.app'] /*update with new url*/
 }));
 app.use(express.json());
 app.use(cookieParser());
