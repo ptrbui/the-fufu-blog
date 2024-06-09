@@ -1,5 +1,5 @@
 import {Link, useNavigate} from "react-router-dom";
-import {useContext, useEffect} from "react";
+import {useContext, useEffect, useState} from "react";
 import {UserContext} from "./UserContext";
 
 export default function Header() {
@@ -14,7 +14,7 @@ export default function Header() {
                 setUserInfo(userInfo);
             });
         });
-    }, [setUserInfo]);
+    }, []);
 
     function logout() {
         fetch('https://the-fufu-blog.onrender.com/logout', {

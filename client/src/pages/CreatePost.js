@@ -1,3 +1,4 @@
+import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
@@ -32,7 +33,6 @@ export default function CreatePost() {
     return (
         <form onSubmit={createNewPost}>
             <h2>Create Post</h2>
-
             <input type="title"
                    placeholder={'Title'}
                    value={title}
