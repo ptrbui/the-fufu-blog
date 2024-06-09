@@ -12,7 +12,7 @@ export default function RegisterPage() {
     async function register(ev) {
         ev.preventDefault();
 
-        const response = await fetch('http://localhost:4000/register', {
+        const response = await fetch('https://the-fufu-blog.onrender.com/register', {
             method: 'POST',
             body: JSON.stringify({ username, password, accessKey}),
             headers: { 'Content-Type': 'application/json' },

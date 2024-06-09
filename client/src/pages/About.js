@@ -16,7 +16,7 @@ export default function About() {
                 <h2>Access Keys</h2>
                 <p className="about">
                     If you'd like to create an account to post on this blog, please contact me via email at {' '}
-                    <a className="in-text" href="peterbui@usc.edu" target="_blank">peterbui@usc.edu</a>.
+                    <a className="in-text" href="peterbui@usc.edu" target="_blank">peterbui@usc.edu</a>
                     for an access key!
                 </p>
                 <h2>Encryption</h2>

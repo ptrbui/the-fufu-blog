@@ -1,28 +1,23 @@
-import {Link, Navigate, useNavigate} from "react-router-dom";
-import {useContext, useEffect, useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
+import {useContext, useEffect} from "react";
 import {UserContext} from "./UserContext";
-import blogIcon from './media/fufu-icon.png';
-import circle from './media/circle.png';
-import triangle from './media/triangle.png';
-import square from './media/square.png';
-
 
 export default function Header() {
     const {setUserInfo, userInfo} = useContext(UserContext);
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:4000/profile', {
+        fetch('https://the-fufu-blog.onrender.com/profile', {
             credentials: 'include',
         }).then(response => {
             response.json().then(userInfo => {
                 setUserInfo(userInfo);
             });
         });
-    }, []);
+    }, [setUserInfo]);
 
     function logout() {
-        fetch('http://localhost:4000/logout', {
+        fetch('https://the-fufu-blog.onrender.com/logout', {
             credentials: 'include',
             method: 'POST',
         }).then(() => {
@@ -41,9 +36,6 @@ export default function Header() {
                     <div className="built-by">built by Peter Bui</div>
                 </div>
                 <div className="logo-container">
-                    {/* <img className="icon circle" src={circle}/> */}
-                    {/* <img className="icon triangle" src={triangle}/> */}
-                    {/* <img className="icon square" src={square}/> */}
                 </div>
 
             </Link>
